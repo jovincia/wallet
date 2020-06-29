@@ -1,60 +1,189 @@
 import 'package:flutter/material.dart';
-import 'package:wallet/main.dart';
-import 'dart:async';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
+import 'main.dart';
+import 'package:wallet/SignUp.dart';
+import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+//import 'package:cached_network_image/cached_network_image.dart';
+//import 'package:flutter_ui_challenges/src/pages/animations/animation1/animation1.dart';
+//import 'package:flutter_ui_challenges/src/utils/oval-right-clipper.dart';
+//void main() => runApp(MyApp());
 
-void main() => runApp( new MyApp());
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return  new MaterialApp(
-      debugShowCheckedModeBanner:false,
-      title: 'login',
-      theme:  new ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: new HomePage(),
-    );
-  }
-
-}
-class HomePage extends StatefulWidget{
-  HomePage({Key key, this.title}) : super(key:key);
-  final String title;
-  @override
-  _HomePageState createState()=> new _HomePageState();
-}
-class _HomePageState  extends State <HomePage> {
-  MediaQueryData queryData;
-  static const Color greyc = Color(0xff494F58);
-  static const Color bluec = Color(0xff59C0E6);
+class Home extends StatelessWidget {
+  static final String path = "lib/src/pages/navigation/drawer2.dart";
+  final GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
+  final Color primary = Colors.white;
+  final Color active = Colors.grey.shade800;
+  final Color divider = Colors.grey.shade600;
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(widget.title),
+    return Scaffold(
+      key: _key,
+      appBar: AppBar(
+        title: Text('Ligh Drawer Navigation'),
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {
+            _key.currentState.openDrawer();
+          },
+        ),
       ),
-      body: Container(
-
+      drawer: _buildDrawer(),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: <Widget>[
+            Container(
+              width: double.infinity,
+              height: 200,
+              decoration: BoxDecoration(
+                  color: Colors.deepOrange,
+                  borderRadius: BorderRadius.circular(10.0)),
+            ),
+            SizedBox(height: 10.0),
+            Container(
+              width: double.infinity,
+              height: 200,
+              decoration: BoxDecoration(
+                  color: Colors.lightGreen,
+                  borderRadius: BorderRadius.circular(10.0)),
+            ),
+            SizedBox(height: 10.0),
+            Container(
+              width: double.infinity,
+              height: 200,
+              decoration: BoxDecoration(
+                  color: Colors.pink,
+                  borderRadius: BorderRadius.circular(10.0)),
+            ),
+          ],
+        ),
       ),
     );
-    // TODO: implement build
   }
-}
 
-class Contacts {
+  _buildDrawer() {
 
-  final int id;
-  final bool isActive;
-  final String picture;
-  final String name;
-  final String gender;
-  final String email;
-  final String about;
+    var images;
+    final String image= images[0];
+    return ClipPath(
+      clipper: OvalRightBorderClipper(),
+      child: Drawer(
+        child: Container(
+          padding: const EdgeInsets.only(left: 16.0, right: 40),
+          decoration: BoxDecoration(
+              color: primary, boxShadow: [BoxShadow(color: Colors.black45)]),
+          width: 300,
+          child: SafeArea(
+            child: SingleChildScrollView(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    alignment: Alignment.centerRight,
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.power_settings_new,
+                        color: active,
+                      ),
+                      onPressed: () {},
+                    ),
+                  ),
+                  Container(
+                    height: 90,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        gradient: LinearGradient(
+                            colors: [Colors.orange, Colors.deepOrange])),
+                    child: CircleAvatar(
+                      radius: 40,
+                      backgroundImage: CachedNetworkImageProvider(image),
+                    ),
+                  ),
+                  SizedBox(height: 5.0),
+                  Text(
+                    "erika costell",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.w600),
+                  ),
+                  Text(
+                    "@erika07",
+                    style: TextStyle(color: active, fontSize: 16.0),
+                  ),
+                  SizedBox(height: 30.0),
+                  _buildRow(Icons.home, "Home"),
+                  _buildDivider(),
+                  _buildRow(Icons.person_pin, "My profile"),
+                  _buildDivider(),
+                  _buildRow(Icons.message, "Messages", showBadge: true),
+                  _buildDivider(),
+                  _buildRow(Icons.notifications, "Notifications",
+                      showBadge: true),
+                  _buildDivider(),
+                  _buildRow(Icons.settings, "Settings"),
+                  _buildDivider(),
+                  _buildRow(Icons.email, "Contact us"),
+                  _buildDivider(),
+                  _buildRow(Icons.info_outline, "Help"),
+                  _buildDivider(),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 
-  Contacts(this.id, this.isActive,this.picture,this.name,this.gender,this.email,this.about);
+  Divider _buildDivider() {
+    return Divider(
+      color: divider,
+    );
+  }
+
+  Widget _buildRow(IconData icon, String title, {bool showBadge = false}) {
+    final TextStyle tStyle = TextStyle(color: active, fontSize: 16.0);
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 5.0),
+      child: Row(children: [
+        Icon(
+          icon,
+          color: active,
+        ),
+        SizedBox(width: 10.0),
+        Text(
+          title,
+          style: tStyle,
+        ),
+        Spacer(),
+        if (showBadge)
+          Material(
+            color: Colors.deepOrange,
+            elevation: 5.0,
+            shadowColor: Colors.red,
+            borderRadius: BorderRadius.circular(5.0),
+            child: Container(
+              width: 25,
+              height: 25,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: Colors.deepOrange,
+                borderRadius: BorderRadius.circular(5.0),
+              ),
+              child: Text(
+                "10+",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+          )
+      ]),
+    );
+  }
 }

@@ -3,9 +3,9 @@ import 'package:wallet/Home.dart';
 import 'main.dart';
 
 
-void main() => runApp(MyApp());
+//void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class SignUp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,7 @@ class _SignUpPageState  extends State <SignUpPage> {
           SizedBox(height: queryData.size.width*0.35),
 */
           SizedBox(height: queryData.size.width*0.135),
-              IconButton(icon: Icon(Icons.ac),
+              IconButton(icon: Icon(Icons.arrow_back_ios),
                   onPressed:(){
                     Navigator.push(context, MaterialPageRoute(
                         builder: (context){
@@ -204,7 +204,7 @@ class _SignUpPageState  extends State <SignUpPage> {
                                       Navigator.push(context, MaterialPageRoute(
                                         builder: (context){
                                           return
-                                          HomePage();
+                                          Home();
                                         }
 
                                       ));
@@ -253,6 +253,7 @@ class _SignUpPageState  extends State <SignUpPage> {
 
 
   }
+
 
 }
 

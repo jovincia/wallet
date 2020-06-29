@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:wallet/Home.dart';
 import 'package:wallet/SignUp.dart';
+import 'package:wallet/main.dart';
+import 'package:wallet/SignUp.dart';
+import 'package:wallet/Home.dart';
 
 
 void main() => runApp(MyApp());
@@ -127,7 +129,7 @@ class _SignInPageState  extends State <SignInPage> {
                                                 Navigator.push( context,MaterialPageRoute(
                                                       builder: (context)
                                                       {
-                                                        return HomePage();
+                                                        return Home();
                                                       }
 
                                                   ),
@@ -199,6 +201,8 @@ class _SignInPageState  extends State <SignInPage> {
 );
 
   }
+
+
 }
 
 class SignInPainter  extends CustomPainter{
