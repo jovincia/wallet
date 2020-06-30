@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wallet/Home.dart';
 import 'main.dart';
+import 'package:wallet/tabs.dart';
 
 
 //void main() => runApp(MyApp());

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-class FancyBottomBarPage extends StatefulWidget {
+class TabsBarPage extends StatefulWidget {
   static final String path = "lib/src/pages/misc/navybar.dart";
   @override
-  _FancyBottomBarPageState createState() => _FancyBottomBarPageState();
+  _TabsBarPageState createState() => _TabsBarPageState();
 }
 
-class _FancyBottomBarPageState extends State<FancyBottomBarPage> {
+class _TabsBarPageState extends State<TabsBarPage> {
   @override
   void dispose() {
     indexcontroller.close();
@@ -49,16 +49,16 @@ class _FancyBottomBarPageState extends State<FancyBottomBarPage> {
           stream: indexcontroller.stream,
           builder: (context, snapshot) {
             int cIndex = snapshot.data;
-            return FancyBottomNavigation(
+            return TabsNavigation(
               currentIndex: cIndex,
-              items: <FancyBottomNavigationItem>[
-                FancyBottomNavigationItem(
+              items: <TabsNavigationItem>[
+                TabsNavigationItem(
                     icon: Icon(Icons.home), title: Text('Home')),
-                FancyBottomNavigationItem(
+                TabsNavigationItem(
                     icon: Icon(Icons.person), title: Text('User')),
-                FancyBottomNavigationItem(
+                TabsNavigationItem(
                     icon: Icon(Icons.security), title: Text('Security')),
-                FancyBottomNavigationItem(
+                TabsNavigationItem(
                     icon: Icon(Icons.message), title: Text('Message')),
               ],
               onItemSelected: (int value) {
@@ -71,16 +71,16 @@ class _FancyBottomBarPageState extends State<FancyBottomBarPage> {
   }
 }
 
-class FancyBottomNavigation extends StatefulWidget {
+class TabsNavigation extends StatefulWidget {
   final int currentIndex;
   final double iconSize;
   final Color activeColor;
   final Color inactiveColor;
   final Color backgroundColor;
-  final List<FancyBottomNavigationItem> items;
+  final List<TabsNavigationItem> items;
   final ValueChanged<int> onItemSelected;
 
-  FancyBottomNavigation(
+  TabsNavigation(
       {Key key,
       this.currentIndex = 0,
       this.iconSize = 24,
@@ -94,8 +94,8 @@ class FancyBottomNavigation extends StatefulWidget {
   }
 
   @override
-  _FancyBottomNavigationState createState() {
-    return _FancyBottomNavigationState(
+  _TabsNavigationState createState() {
+    return _TabsNavigationState(
         items: items,
         backgroundColor: backgroundColor,
         currentIndex: currentIndex,
@@ -106,17 +106,17 @@ class FancyBottomNavigation extends StatefulWidget {
   }
 }
 
-class _FancyBottomNavigationState extends State<FancyBottomNavigation> {
+class _TabsNavigationState extends State<TabsNavigation> {
   final int currentIndex;
   final double iconSize;
   Color activeColor;
   Color inactiveColor;
   Color backgroundColor;
-  List<FancyBottomNavigationItem> items;
+  List<TabsNavigationItem> items;
   int _selectedIndex;
   ValueChanged<int> onItemSelected;
 
-  _FancyBottomNavigationState(
+  _TabsNavigationState(
       {@required this.items,
       this.currentIndex,
       this.activeColor,
@@ -127,7 +127,7 @@ class _FancyBottomNavigationState extends State<FancyBottomNavigation> {
     _selectedIndex = currentIndex;
   }
 
-  Widget _buildItem(FancyBottomNavigationItem item, bool isSelected) {
+  Widget _buildItem(TabsNavigationItem item, bool isSelected) {
     return AnimatedContainer(
       width: isSelected ? 124 : 50,
       height: double.maxFinite,
@@ -207,11 +207,11 @@ class _FancyBottomNavigationState extends State<FancyBottomNavigation> {
   }
 }
 
-class FancyBottomNavigationItem {
+class TabsNavigationItem {
   final Icon icon;
   final Text title;
 
-  FancyBottomNavigationItem({
+  TabsNavigationItem({
     @required this.icon,
     @required this.title,
   }) {

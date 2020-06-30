@@ -4,6 +4,7 @@ import 'package:wallet/SignUp.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:animations/animations.dart';
+import 'package:wallet/tabs.dart';
 
 
 class Home extends StatelessWidget {
