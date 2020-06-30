@@ -3,10 +3,7 @@ import 'main.dart';
 import 'package:wallet/SignUp.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-//import 'package:cached_network_image/cached_network_image.dart';
-//import 'package:flutter_ui_challenges/src/pages/animations/animation1/animation1.dart';
-//import 'package:flutter_ui_challenges/src/utils/oval-right-clipper.dart';
-//void main() => runApp(MyApp());
+import 'package:animations/animations.dart';
 
 
 class Home extends StatelessWidget {
@@ -22,15 +19,18 @@ class Home extends StatelessWidget {
       key: _key,
       appBar: AppBar(
         title: Text('Ligh Drawer Navigation'),
-        automaticallyImplyLeading: false,
+         automaticallyImplyLeading: false,
         leading: IconButton(
           icon: Icon(Icons.menu),
           onPressed: () {
             _key.currentState.openDrawer();
-          },
+            } 
+          
         ),
       ),
-      drawer: _buildDrawer(),
+   
+     drawer: _buildDrawer(),
+
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -61,13 +61,13 @@ class Home extends StatelessWidget {
           ],
         ),
       ),
-    );
+    );   
   }
 
-  _buildDrawer() {
+   Widget _buildDrawer() {
 
-    var images;
-    final String image= images[0];
+    //var images;
+    //final String image= images[0];
     return ClipPath(
       clipper: OvalRightBorderClipper(),
       child: Drawer(
@@ -99,7 +99,7 @@ class Home extends StatelessWidget {
                             colors: [Colors.orange, Colors.deepOrange])),
                     child: CircleAvatar(
                       radius: 40,
-                      backgroundImage: CachedNetworkImageProvider(image),
+                      //backgroundImage: CachedNetworkImageProvider(image),
                     ),
                   ),
                   SizedBox(height: 5.0),
@@ -115,6 +115,7 @@ class Home extends StatelessWidget {
                     style: TextStyle(color: active, fontSize: 16.0),
                   ),
                   SizedBox(height: 30.0),
+                  _buildDivider(),
                   _buildRow(Icons.home, "Home"),
                   _buildDivider(),
                   _buildRow(Icons.person_pin, "My profile"),
@@ -130,7 +131,7 @@ class Home extends StatelessWidget {
                   _buildDivider(),
                   _buildRow(Icons.info_outline, "Help"),
                   _buildDivider(),
-                ],
+                   ],
               ),
             ),
           ),
@@ -138,6 +139,7 @@ class Home extends StatelessWidget {
       ),
     );
   }
+  
 
   Divider _buildDivider() {
     return Divider(
@@ -184,6 +186,9 @@ class Home extends StatelessWidget {
             ),
           )
       ]),
-    );
+    ); 
   }
-}
+  }
+
+
+

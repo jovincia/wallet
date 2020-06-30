@@ -179,7 +179,7 @@ class _SignUpPageState  extends State <SignUpPage> {
                         ),
                       ),
                       SizedBox(height: queryData.size.width*0.1),
-                      Row(
+                      Row(                                                                     
                         mainAxisAlignment:MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           Text(
@@ -201,22 +201,16 @@ class _SignUpPageState  extends State <SignUpPage> {
                                     color: Colors.black,
                                     icon:Icon(Icons.arrow_forward,),
                                     onPressed: (){
-                                      Navigator.push(context, MaterialPageRoute(
-                                        builder: (context){
-                                          return
-                                          Home();
-                                        }
-
-                                      ));
-                                    },
-
+                                       Navigator.of(context).push(
+                                                  MaterialPageRoute(builder:(_)=> Home())
+                                         );
+                                              }),
                                   ),
-                                ),
                               ),
-                            ),
-                          ),
-                        ],
-                      ),
+                                    ),
+                                     ),
+            ],
+            ),
                       SizedBox(height: queryData.size.width*0.1),
                       Row(
                         mainAxisAlignment:MainAxisAlignment.spaceBetween,
