@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wallet/Home.dart';
 import 'main.dart';
-import 'package:wallet/tabs.dart';
+import 'package:wallet/Tabs.dart';
 
 
 //void main() => runApp(MyApp());
@@ -28,9 +28,8 @@ class SignUpPage extends StatefulWidget{
 class _SignUpPageState  extends State <SignUpPage> {
   MediaQueryData queryData;
   static const Color greyc = Color(0xff494F58);
-  static const Color bluec = Color(0xff59C0E6  );
+  static const Color bluec = Color(0xff59C0E6) ;
 
-  get trailing => null;
 
   @override
   Widget build(BuildContext context) {

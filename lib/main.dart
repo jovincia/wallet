@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wallet/SignUp.dart';
 import 'package:wallet/Home.dart';
+import 'package:wallet/Tabs.dart';
 
 
 
@@ -46,10 +47,10 @@ class _SignInPageState  extends State <SignInPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               SizedBox(height: queryData.size.width*0.15),
-              Icon(
+              /*Icon(
                 Icons.arrow_back_ios,
                 color: Colors.blueGrey,
-              ),
+              ),*/
               SizedBox(height: queryData.size.width*0.08),
               Text('          Welcome ',
                 style: TextStyle(
