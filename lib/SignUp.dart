@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wallet/Home.dart';
 import 'main.dart';
-import 'package:wallet/Tabs.dart';
+import 'Background.dart';
 
 
 //void main() => runApp(MyApp());
@@ -10,15 +10,8 @@ class SignUp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner:false,
-      title: 'login',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: SignUpPage(),
-    );
-  }
+ 
+  } 
 
 }
 class SignUpPage extends StatefulWidget{
@@ -27,7 +20,6 @@ class SignUpPage extends StatefulWidget{
 }
 class _SignUpPageState  extends State <SignUpPage> {
   MediaQueryData queryData;
-  static const Color greyc = Color(0xff494F58);
   static const Color bluec = Color(0xff59C0E6) ;
 
 
@@ -35,31 +27,6 @@ class _SignUpPageState  extends State <SignUpPage> {
   Widget build(BuildContext context) {
 
     queryData=MediaQuery.of(context);
-    return Scaffold(
-
-      body: SingleChildScrollView(
-        child: CustomPaint(
-          painter: SignUpPainter(),
-          child:Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-       /*   Row(
-          children: <Widget>[
-          SizedBox(height: queryData.size.width*0.35),
-*/
-          SizedBox(height: queryData.size.width*0.135),
-              IconButton(icon: Icon(Icons.arrow_back_ios),
-                  onPressed:(){
-                    Navigator.push(context, MaterialPageRoute(
-                        builder: (context){
-                          return SignInPage();
-                        }
-                    ));
-                  }
-              ),
-         // ]),
-
-          Row(
             children: <Widget>[
               SizedBox(height: queryData.size.width*0.2),
               Text('      Create ',
@@ -69,8 +36,8 @@ class _SignUpPageState  extends State <SignUpPage> {
                   color: Colors.white,
                 ),
               ),
-              ],
-          ),
+              ];
+          
 
               Row(
                 children: <Widget>[
@@ -84,8 +51,10 @@ class _SignUpPageState  extends State <SignUpPage> {
                     ),
                   ),
                 ],
-              ),
-
+              );
+               ListView.builder(
+              itemBuilder:(context,index) =>  
+            
               Padding(
                 padding: EdgeInsets.all(queryData.size.width*0.07),
                 child: Form(
@@ -95,7 +64,7 @@ class _SignUpPageState  extends State <SignUpPage> {
                       TextFormField(
                         decoration: InputDecoration(
                           labelText: 'First name',
-                          hintText: 'First name',
+                         // hintText: 'First name',
                           hintStyle: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: queryData.size.width*0.05,
@@ -112,7 +81,7 @@ class _SignUpPageState  extends State <SignUpPage> {
                       TextFormField(
                         decoration: InputDecoration(
                           labelText: 'Last name',
-                          hintText: 'Last name',
+                         // hintText: 'Last name',
                           hintStyle: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: queryData.size.width*0.05,
@@ -129,7 +98,7 @@ class _SignUpPageState  extends State <SignUpPage> {
                       TextFormField(
                         decoration: InputDecoration(
                           labelText: 'Email',
-                          hintText: 'Email',
+                         // hintText: 'Email',
                           hintStyle: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: queryData.size.width*0.05,
@@ -147,7 +116,7 @@ class _SignUpPageState  extends State <SignUpPage> {
                         obscureText:true,
                         decoration: InputDecoration(
                             labelText: 'Password',
-                            hintText: 'Password',
+                           // hintText: 'Password',
                             hintStyle: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: queryData.size.width*0.05,
@@ -165,7 +134,7 @@ class _SignUpPageState  extends State <SignUpPage> {
                         obscureText:true,
                         decoration: InputDecoration(
                           labelText: 'Confirm password',
-                          hintText: 'Confirm password',
+                         // hintText: 'Confirm password',
                           hintStyle: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: queryData.size.width*0.05,
@@ -236,50 +205,26 @@ class _SignUpPageState  extends State <SignUpPage> {
                     ],
                   ),
                 ),
-              ),
-            ],
+            ),
+             );
+    return Scaffold(
 
-        ),
+      body: Container(
+        height: queryData.size.height,
+          child: Stack(
+          children:[
+             CustomPaint(
+              painter: Painter(),
+              child: Container(),
+             ),
+          
+                ],
+    ),
       ),
-      ),
-    );
-
-
+      );   
+      
 
   }
-
-
 }
 
-class SignUpPainter  extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    const Color orangec = Color(0xffFEAC46);
-    const Color greyc = Color(0xff494F58);
-    const Color bluec = Color(0xff59C0E6);
-    var paint = Paint();
-
-    paint.color = bluec;
-
-    Offset c1 = Offset(size.width * 1.0, size.width * 0.3);
-    double radius1 = size.width *1.1;
-
-    canvas.drawCircle(c1, radius1, paint);
-
-    paint.color = greyc;
-
-    Offset c2 = Offset(size.width * 0.05, size.width * 1.8);
-    double radius2 = size.width * 0.9;
-
-    canvas.drawCircle(c2, radius2, paint);
-  }
-
-
-  @override
-  bool shouldRepaint(SignUpPainter oldDelegate) => false;
-
-  @override
-  bool shouldRebuildSemantics(SignUpPainter oldDelegate) => false;
-
-}
 

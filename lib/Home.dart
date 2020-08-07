@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'main.dart';
-import 'package:wallet/SignUp.dart';
-import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:animations/animations.dart';
-import 'package:wallet/homepage.dart';
-import 'package:wallet/Calculator.dart';
+import 'package:wallet/Secondhome.dart';
+//import 'package:wallet/Settings.dart';
+import 'package:wallet/Profils.dart';
+
+//import 'home.dart';
 
 
 class Home extends StatefulWidget {
@@ -26,9 +24,9 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+     /*  appBar: AppBar(
         title: Text("Wallet"),
-      ),
+      ), */
       backgroundColor: Colors.grey.shade300,
       body: getPage(_currentPage),
       bottomNavigationBar: AnimatedBottomNav(
@@ -44,11 +42,14 @@ class _HomeState extends State<Home> {
   getPage(int page) {
     switch(page) {
       case 0:
-        return homepage();
+        return SecondhomePage();
       case 1:
-        return Center(child: Container(child: Text("Profile Page"),));
+        return Profils();
+
       case 2:
-        return Center(child: Container(child: Text("Menu Page"),));
+        return
+         Center(child: Container(child: Text("Settings")));
+
     }
   }
 }
@@ -89,8 +90,8 @@ class AnimatedBottomNav extends StatelessWidget {
             child: InkWell(
               onTap: () => onChange(2),
               child: BottomNavItem(
-                icon: Icons.menu,
-                title: "Menu",
+                icon: Icons.settings,
+                title: "Settings",
                 isActive: currentIndex == 2,
               ),
             ),

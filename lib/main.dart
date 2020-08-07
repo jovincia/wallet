@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wallet/SignUp.dart';
 import 'package:wallet/Home.dart';
-import 'package:wallet/Tabs.dart';
 
 
 
@@ -31,8 +30,6 @@ class SignInPage extends StatefulWidget{
 class _SignInPageState  extends State <SignInPage> {
   MediaQueryData queryData;
   static const Color orangec = Color(0xffFEAC46);
-  static const Color bluec = Color(0xff59C0E6  );
-  static const Color greyc = Color(0xff494F58);
 
 
   @override

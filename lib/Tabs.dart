@@ -57,9 +57,7 @@ class _FancyBottomBarPageState extends State<FancyBottomBarPage> {
                 FancyBottomNavigationItem(
                     icon: Icon(Icons.person), title: Text('User')),
                 FancyBottomNavigationItem(
-                    icon: Icon(Icons.security), title: Text('Security')),
-                FancyBottomNavigationItem(
-                    icon: Icon(Icons.message), title: Text('Message')),
+                    icon: Icon(Icons.settings), title: Text('Settings')),
               ],
               onItemSelected: (int value) {
                 indexcontroller.add(value);
