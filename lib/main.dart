@@ -44,10 +44,7 @@ class _SignInPageState  extends State <SignInPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               SizedBox(height: queryData.size.width*0.15),
-              /*Icon(
-                Icons.arrow_back_ios,
-                color: Colors.blueGrey,
-              ),*/
+              
               SizedBox(height: queryData.size.width*0.08),
               Text('          Welcome ',
                 style: TextStyle(
@@ -124,15 +121,7 @@ class _SignInPageState  extends State <SignInPage> {
                                               color: Colors.black,
                                              icon: Icon(Icons.arrow_forward,),
                                               onPressed: () {
-                                               /* Navigator.push( context,MaterialPageRoute(
-                                                      builder: (context)
-                                                      {
-                                                        return Home();
-                                                      }
-
-                                                  ),
-
-                                                );*/
+                                              
                                                 Navigator.of(context).push(
                                                   MaterialPageRoute(builder:(_)=> Home())
                                                 );
@@ -186,19 +175,8 @@ class _SignInPageState  extends State <SignInPage> {
           ),
         ),
     ),
-      /*  floatingActionButton: FloatingActionButton(onPressed: ()
-      {
-        Navigator.push(context, MaterialPageRoute(
-            builder: (context) {
-              return HomePage();
-            }
-        ));
-
-
-        },
-          child: Icon(Icons.arrow_forward),
-        ),
-*/
+   
+   
 );
 
   }

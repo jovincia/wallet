@@ -10,6 +10,9 @@ class SignUp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    return MaterialApp(
+       home: SignUpPage(),
+    );
  
   } 
 
@@ -52,9 +55,9 @@ class _SignUpPageState  extends State <SignUpPage> {
                   ),
                 ],
               );
-               ListView.builder(
-              itemBuilder:(context,index) =>  
-            
+                ListView.builder(
+              itemBuilder:(context,index) =>   
+            SizedBox(width: queryData.size.width*0.22));
               Padding(
                 padding: EdgeInsets.all(queryData.size.width*0.07),
                 child: Form(
@@ -205,8 +208,7 @@ class _SignUpPageState  extends State <SignUpPage> {
                     ],
                   ),
                 ),
-            ),
-             );
+            );
     return Scaffold(
 
       body: Container(

@@ -6,6 +6,8 @@ import 'main.dart';
 import 'Background.dart';
 import 'Fabottoms.dart';
 import 'Transactions.dart';
+import 'Comptes.dart';
+import 'package:provider/provider.dart';
 
 
 class SecondhomePage extends StatefulWidget{
@@ -46,7 +48,6 @@ class _SecondhomePageState  extends State <SecondhomePage> with SingleTickerProv
     super.initState();
     animationController.addListener(() {
       setState((){
-
       });
     });
   }
@@ -69,7 +70,7 @@ Size size = MediaQuery.of(context).size;
               bottom: 30,
               child: Stack(
                 children:<Widget>[
-                  
+                    
                   Transform.translate(
                     offset: Offset.fromDirection(position(180),translation_three.value * 100),
                     
@@ -87,9 +88,10 @@ Size size = MediaQuery.of(context).size;
                         color: Colors.black,
                         
                       ),
-                      texticon:"Transaction",
                      
-                      onclick: (){
+                    
+                     
+                      onPressed: (){
                         Navigator.of(context).push(
                           MaterialPageRoute(builder: (_)=>TransactionsPage())
                         );
@@ -110,7 +112,7 @@ Size size = MediaQuery.of(context).size;
                         Icons.monetization_on,
                         color: Colors.black,
                       ),
-                      onclick: (){
+                      onPressed: (){
                         Navigator.of(context).push(
                           MaterialPageRoute(builder: (_)=>ComptesPage())
                         );
@@ -132,7 +134,8 @@ Size size = MediaQuery.of(context).size;
                           Icons.add_circle,
                           color: Colors.black,
                         ),
-                        onclick: (){
+                  
+                        onPressed: (){
                           
                         }
                     ),
@@ -151,7 +154,7 @@ Size size = MediaQuery.of(context).size;
                         Icons.menu,
                         color: Colors.blue[300],
                       ),
-                      onclick: (){
+                      onPressed: (){
                           if (animationController.isCompleted){
                             animationController.reverse();
 

@@ -3,7 +3,14 @@ import 'package:flutter/semantics.dart';
 import 'Background.dart';
 import 'main.dart';
 
+class Comptes extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+ 
+  } 
 
+}
 
 class ComptesPage extends StatefulWidget{
   @override
