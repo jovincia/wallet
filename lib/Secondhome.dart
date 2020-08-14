@@ -8,6 +8,7 @@ import 'Fabottoms.dart';
 import 'Transactions.dart';
 import 'Comptes.dart';
 import 'package:provider/provider.dart';
+import 'Card.dart';
 
 
 class SecondhomePage extends StatefulWidget{
@@ -78,19 +79,15 @@ Size size = MediaQuery.of(context).size;
                     transform: Matrix4.rotationZ(position(rotation.value))..scale(translation_three.value),
                     alignment: Alignment.center,
                     
-                          child: MyBottoms(
+                      child: MyBottoms(
                       color:Colors.orangeAccent,
                       width: 55,
                       height: 55,
                       icon: Icon(
                         Icons
                         .payment,
-                        color: Colors.black,
-                        
+                        color: Colors.black, 
                       ),
-                     
-                    
-                     
                       onPressed: (){
                         Navigator.of(context).push(
                           MaterialPageRoute(builder: (_)=>TransactionsPage())

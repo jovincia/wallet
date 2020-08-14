@@ -176,7 +176,8 @@ class _SignUpPageState  extends State <SignUpPage> {
                                        Navigator.of(context).push(
                                                   MaterialPageRoute(builder:(_)=> Home())
                                          );
-                                              }),
+                                              } 
+                                   ),
                                   ),
                               ),
                                     ),

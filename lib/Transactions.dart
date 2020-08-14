@@ -27,20 +27,37 @@ MediaQueryData queryData;
   Widget build(BuildContext context) {
 Size size = MediaQuery.of(context).size;
     queryData=MediaQuery.of(context);
-    return Scaffold(
-      body: Container(
-        height: queryData.size.height,
-        child: Stack(
-          children: [
-            CustomPaint(
-              painter: Painter(),
-              child: Container(),
-            ),
-          ]),
+    Padding(
+   padding: EdgeInsets.all(queryData.size.width*0.07),
+      child: Column(
+        children:<Widget> [
+          TextField(
+            decoration:InputDecoration(
+              labelText: ""
+            )
+          )
+
+        ],
+
       ),
-    );
-
-
+      );
+     
+    return Scaffold(
+      appBar: AppBar (
+        title: Text('Transactions'),
+      ),
+      body: Container( 
+        height: queryData.size.height,
+        child: 
+            Stack(
+            children: [
+              CustomPaint(
+                painter: Painter(),
+                child: Container(),
+              ),
+            ]),
+       ),
+     );
   }
   }
   
