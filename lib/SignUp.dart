@@ -30,7 +30,17 @@ class _SignUpPageState  extends State <SignUpPage> {
   Widget build(BuildContext context) {
 
     queryData=MediaQuery.of(context);
-            children: <Widget>[
+     return Scaffold(
+      body: Container(
+        height: queryData.size.height,
+          child: Stack(
+          children:[
+             CustomPaint(
+              painter: Painter(),
+              child: Container(),
+             ),
+              
+          
               SizedBox(height: queryData.size.width*0.2),
               Text('      Create ',
                 style: TextStyle(
@@ -39,8 +49,6 @@ class _SignUpPageState  extends State <SignUpPage> {
                   color: Colors.white,
                 ),
               ),
-              ];
-          
 
               Row(
                 children: <Widget>[
@@ -54,10 +62,7 @@ class _SignUpPageState  extends State <SignUpPage> {
                     ),
                   ),
                 ],
-              );
-                ListView.builder(
-              itemBuilder:(context,index) =>   
-            SizedBox(width: queryData.size.width*0.22));
+              ),
               Padding(
                 padding: EdgeInsets.all(queryData.size.width*0.07),
                 child: Form(
@@ -209,8 +214,8 @@ class _SignUpPageState  extends State <SignUpPage> {
                     ],
                   ),
                 ),
-            );
-    return Scaffold(
+            
+   /*  return Scaffold(
 
       body: Container(
         height: queryData.size.height,
@@ -220,11 +225,14 @@ class _SignUpPageState  extends State <SignUpPage> {
               painter: Painter(),
               child: Container(),
              ),
+              ], */
           
-                ],
+               
     ),
+          ]
       ),
-      );   
+      )
+     ); 
       
 
   }

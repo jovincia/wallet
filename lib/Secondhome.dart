@@ -177,8 +177,6 @@ Size size = MediaQuery.of(context).size;
   }
 }
 
-class Transactions {
-}
 
 
           
