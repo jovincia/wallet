@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "41794752150",
+    "firebase_url": "https://wallet-8126f.firebaseio.com",
+    "project_id": "wallet-8126f",
+    "storage_bucket": "wallet-8126f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:41794752150:android:35a0086e2c26751b2a7cb7",
+        "android_client_info": {
+          "package_name": "com.dani.wallet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "41794752150-66taviskl92p6rcqhf8hmaifrou744df.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcE18xPbDm5-rUFPuPeof906lmk_H88jU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "41794752150-66taviskl92p6rcqhf8hmaifrou744df.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
